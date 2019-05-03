@@ -1,14 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import  Button from 'react-bootstrap/Button';
+
 
 
 function Header(){
   return(
-    <div className= "header">
-      <h1>header</h1>
-      <Button variant="outline-primary">Primary</Button>
-
+    <div>
+      <nav>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Projects</a></li>
+      </ul>
+    </nav>
     </div>
   )
 }
