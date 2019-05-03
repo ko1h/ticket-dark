@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
-function Welcome(){
+function MusicList(){
   return(
     <div>
       <h1>Year of fun</h1>
@@ -13,4 +13,4 @@ function Welcome(){
   )
 }
 
-export default Welcome
+export default MusicList
