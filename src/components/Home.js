@@ -4,7 +4,7 @@ import styled from 'styled-components'
 function Home(){
   return(
     <div>
-      <Something>Welcome to the home component</Something>
+      <h1>something</h1>
     </div>
   )
 }
