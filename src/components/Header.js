@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 function Header(){
   return(
     <div>
@@ -13,9 +11,8 @@ function Header(){
         <div class="line"></div>
       </div>
       <ul class="nav-links">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Projects</a></li>
+        <li><Link to="/">HOME</Link></li>
+        <li><Link to="/music">MUSIC</Link></li>
       </ul>
     </nav>
     </div>
