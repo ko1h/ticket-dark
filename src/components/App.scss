@@ -2,15 +2,10 @@
 .App {
   text-align: center;
 }
-.header {
-  background-color: green;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+
+.mainPage {
   width: 100%;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 80vh;
 }
 
 .link {
