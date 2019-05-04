@@ -10,7 +10,7 @@
 
 ## Planning
 
-![](src/assets/images/welcome.png)
+![](src/assets/images/wireframe.png)
 
  1. Did research for the first two hours. Looking at other event application.
  2. Sketch out a component tree diagram, show all the components that will need to be made.
