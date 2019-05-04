@@ -1,12 +1,12 @@
 ### _Ticket Dark_
 
-#### _User can view a list of available sake_
+#### _User can view a list of event's occurring near them_
 
 #### _By Kohichi Horii_
 
 ## Description
 
-* _The purpose of this project is to have a user see which sake is available, brand, price and alcohol content_
+* _The purpose of this project is to have a user view event's that are coming up or even around their area. User can also add events to the webpage.
 
 ## Planning
 
@@ -34,20 +34,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Completed Features
-* _Program will navigate between different pages_
-* _Program will take a new sake entree and show it in sake list_
+
+* _Some of the Wire framing_
+
 
 ## Planned Features
 
-* _Have the user be able to import a photo with the new sake information_
-* _Add animation when customer hovers over images and also links_
-* _User will be able to edit if the sake is no longer available_
-* _User will be able to purchase an item, will make a checkout component_
-
-
-## Known Bugs
-
-_If user adds more then three items the list will go off the background._
+* _Add google calendar_
+* _Add google maps_
+* _The application will be tied to social media (facebook, twitter, Instagram)_
 
 ## Support and contact details
 
