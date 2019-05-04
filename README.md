@@ -44,6 +44,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * _Add google maps_
 * _The application will be tied to social media (facebook, twitter, Instagram)_
 
+
 ## Support and contact details
 
 _If you are having issues you can contact us at kohichi.horii@gmail.com_
