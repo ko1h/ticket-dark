@@ -1,17 +1,21 @@
 import React from 'react';
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
-function EventList() {
+function EventList(props) {
   return(
-    <div className="nav-links">
-      <li>Drake</li>
-      <li>Ed Sheeran</li>
-      <li>The Weekend</li>
-      <li>Maroon</li>
-      <li>Kanye West</li>
-      <a href="#">Log In</a>
-      <a href="#">Share</a>
-    </div>
+    <h1>Our event</h1>
+  {Object.keys(props.eventList).map(function(eventId) {
+    var event = props.eventList[eventId]
+    return <Event name={event.name}
+      name={event.name}
+      brand={event.brand}
+      details={event.details}
+      onBuyTicket{props.onBuyTicket}
+      eventId={eventId}
+      key={eventId} />;
+    })}
+  </div>
   )
 }
 
