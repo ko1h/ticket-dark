@@ -1,27 +1,16 @@
-import React, { Component } from 'react'
-import { Animated, Dimensions, Image, FlatList, Modal, StyleSheet, ScrollView } from 'react-native';
+import React from 'react';
+import styled from 'styled-components'
 
-Welcome.defaultProps = {
-  illustrations: [
-    { id: 1, source: require('../assets/images/illustration_1.png') },
-    { id: 2, source: require('../assets/images/illustration_2.png') },
-    { id: 3, source: require('../assets/images/illustration_3.png') },
-  ],
-};
+function Welcome(){
+  return(
+    <div>
+      <h1>Year of fun</h1>
+      <p>Relive the moments or make new ones</p>
+      <button>log in</button>
+      <p>OR</p>
+      <button>skip to main page</button>
+    </div>
+  )
+}
 
-export default Welcome;
-
-const styles = StyleSheet.create({
-  stepsContainer: {
-    position: 'absolute',
-    bottom: theme.sizes.base * 3,
-    right: 0,
-    left: 0,
-  },
-  steps: {
-    width: 5,
-    height: 5,
-    borderRadius: 5,
-    marginHorizontal: 2.5,
-  },
-})
+export default Welcome
