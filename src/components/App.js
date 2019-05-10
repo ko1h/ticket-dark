@@ -6,6 +6,32 @@ import Welcome from './Welcome';
 import Music from './Music';
 import { Switch, Route } from 'react-router-dom';
 
+class App extends React.Component {
+
+constructor(props) {
+  super(props)
+  this.state = {
+    masterEventList: {
+      'event1' : {
+        name: 'name area'
+        ticket: 'ticket cost'
+        details: 'details about the band'
+      },
+      'event2' : {
+        name: 'name area',
+        ticket: 'ticket cost'
+        details: 'details about the band'
+      }
+    }
+
+
+  this.handleAddingItem = this.handleAddingItem.bind(this);
+  handleToBuyTicket(ticket) {
+    let newMasterTicketList = Object.assign({}, this.state.masterTicketList, {
+     [newTicketId]: newTicket
+   });
+   this.setState({masterTicketList: newMasterTicketList});
+  }
 
 function App() {
   return (
