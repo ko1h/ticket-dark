@@ -1,8 +1,6 @@
-import { combineReducers } from 'redux';
-import resultsDataReducer from './resultsDataReducer';
+import * as EventActionTypes from '../actiontypes/event';
 
-const rootReducer = combineReducers({
+export default function Event() {
 
-});
-
-export default rootReducer;
+  
+}

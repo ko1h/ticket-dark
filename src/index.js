@@ -1,10 +1,15 @@
 import React from 'react';
-import { render } from 'react-dom';
-import './index.scss';
-import App from './components/App';
-import { createStore } from 'redux';
-import EventReducer from './reducers/Event';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import EventReducer from './reducers/event';
+import App from './components/App';
+import './index.scss';
+
+// Import bootstrap css
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 
 //import * as serviceWorker from './serviceWorker';
 
@@ -12,8 +17,7 @@ const store = createStore(
   EventReducer
 );
 
-
-render(
+ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
