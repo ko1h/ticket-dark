@@ -1,22 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-function Header(){
-  return(
-    <div>
-      <nav>
-      <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-      <ul class="nav-links">
-        <li><Link to="/">HOME</Link></li>
-        <li><Link to="/music">MUSIC</Link></li>
-      </ul>
-    </nav>
-    </div>
-  )
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBContainer,
+MDBIcon } from 'mdbreact';
+
+class Header extends Component {
+state = {
+  collapseID: ''
 }
 
-export default Header
+toggleCollapse = collapseID => () => {
+  this.setState(prevState => ({ collapseID: (prevState.collapseID !== collapseID ? collapseID : '') }));
+}
+
+render() {
+  return (
+      <MDBContainer>
+        <MDBNavbar color="green lighten-4" style={{ marginTop: '20px' }} light>
+          <MDBContainer>
+            <MDBNavbarBrand>
+              MDBNavbar
+            </MDBNavbarBrand>
+            <MDBNavbarToggler tag="button" className="aqua-gradient" onClick={this.toggleCollapse('navbarCollapse13')}>
+              <span className="white-text">
+                <MDBIcon icon="bars" />
+              </span>
+            </MDBNavbarToggler>
+            <MDBCollapse id="navbarCollapse13" isOpen={this.state.collapseID} navbar>
+              <MDBNavbarNav left>
+                <MDBNavItem active>
+                  <MDBNavLink to="#!">Home</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="#!">Link</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="#!">Profile</MDBNavLink>
+                </MDBNavItem>
+              </MDBNavbarNav>
+            </MDBCollapse>
+          </MDBContainer>
+        </MDBNavbar>
+      </MDBContainer>
+    );
+  }
+}
+
+export default Header;
