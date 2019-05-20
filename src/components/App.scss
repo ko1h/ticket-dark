@@ -3,8 +3,9 @@
   text-align: center;
 }
 
-.mainPage {
+.Welcome {
   width: 100%;
+  margin-top: 20px;
   height: 80vh;
 }
 
@@ -13,32 +14,6 @@
   text-decoration: none;
 }
 
-nav {
-  height: 10vh;
+.Nav {
   background-color: lightgray;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  width: 50%;
-  height: 100%;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: auto;
-}
-
-.hamburger {
-  position: absolute;
-  cursor: pointer;
-  right: 5%;
-  top: 5%;
-  transform: translate(-5%, -50%);
-  z-index: 2;
-.line {
-  width: 30px;
-  height: 3px;
-  background: white;
-  margin: 5px;
-  }
 }

@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Avatar from './Avatar';
+import Dropdown from './Dropdown';
+
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -14,8 +16,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 
 const styles = {
-  root: {
-    flexGrow: 1,
+  appbar: {
+    backgroundColor: 'black',
+    height: '20vh'
   },
   grow: {
     flexGrow: 1,
@@ -44,31 +47,34 @@ class MenuAppBar extends React.Component {
     this.setState({ anchorEl: null });
   };
 
+  handleShow = event => {
+    this.setState({ anchorAl: event.currentTarget });
+  };
+
+  handleEnd = () => {
+    this.setState({ anchorAl: null });
+  };
+
+
   render() {
     const { classes } = this.props;
     const { auth, anchorEl } = this.state;
     const open = Boolean(anchorEl);
 
     return (
-      <div className={classes.root}>
-        {/*<FormGroup>
-          <FormControlLabel
-            control={
-              <Switch checked={auth} onChange={this.handleChange} aria-label="LoginSwitch" />
-            }
-            label={auth ? 'Logout' : 'Login'}
-          />
-        </FormGroup>*/}
-
-        <AppBar position="static">
+      <div className="Nav">
+        <AppBar position="static" className={classes.appbar}>
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-              <MenuIcon />
+              <MenuIcon  onClick={this.handleMenu}>
+
+                <Dropdown />
+              </MenuIcon>
             </IconButton>
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              Photos
+              Ticket Dark
             </Typography>
-            {auth && (
+            {(
               <div>
                 <IconButton
                   aria-owns={open ? 'menu-appbar' : undefined}
@@ -76,9 +82,8 @@ class MenuAppBar extends React.Component {
                   onClick={this.handleMenu}
                   color="inherit"
                 >
-                  <AccountCircle />
+                  <Avatar />
                 </IconButton>
-
                 <Menu
                   id="menu-appbar"
                   anchorEl={anchorEl}
@@ -95,8 +100,15 @@ class MenuAppBar extends React.Component {
                 >
                   <MenuItem onClick={this.handleClose}>Profile</MenuItem>
                   <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                    <FormGroup>
+                      <FormControlLabel
+                        control={
+                          <Switch checked={auth} onChange={this.handleChange} aria-label="LoginSwitch" />
+                        }
+                        label={auth ? 'Logout' : 'Login'}
+                      />
+                    </FormGroup>
                 </Menu>
-
               </div>
             )}
           </Toolbar>
