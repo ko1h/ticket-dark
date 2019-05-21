@@ -6,6 +6,9 @@ function Welcome(){
   return(
     <div className="Welcome">
       <img src={wallpaper}/>
+      <div>
+        <input type="Search" placeholder="Search"/>
+      </div>
     </div>
   )
 }

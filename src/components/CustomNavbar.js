@@ -22,6 +22,7 @@ const styles = {
   },
   grow: {
     flexGrow: 1,
+    textAlign: 'center'
   },
   menuButton: {
     marginLeft: -12,
