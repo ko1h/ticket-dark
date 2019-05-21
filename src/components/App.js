@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import Toolbar from './Toolbar/Toolbar';
+import SideDrawer from './SideDrawer/SideDrawer';
+import Backdrop from './Backdrop/Backdrop';
+
 import Navbar from './CustomNavbar';
 import Error404 from './Error404';
 import Welcome from './Welcome';
@@ -9,7 +13,26 @@ import Music from './Music';
 
 
 export default class App extends Component {
+  state = {
+    sideDrawerOpen: false
+  };
+
+  drawerToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false});
+  };
+
   render() {
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
     return (
     <BrowserRouter>
         <div>
@@ -19,7 +42,9 @@ export default class App extends Component {
              padding: 0;
            }
            `}</style>
-          <Navbar />
+           <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+           <SideDrawer show={this.state.sideDrawerOpen} />
+
           <Switch>
             <Route exact path="/" component={Welcome} />
             <Route path="/Music" component={Music} />
