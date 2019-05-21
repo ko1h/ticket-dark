@@ -18,7 +18,7 @@ import Menu from '@material-ui/core/Menu';
 const styles = {
   appbar: {
     backgroundColor: '#D4A8A8',
-    height: '15vh'
+    height: '10vh'
   },
   grow: {
     flexGrow: 1,

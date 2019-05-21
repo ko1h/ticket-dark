@@ -12,7 +12,7 @@ const Form = () => (
         placeholder="Enter email"
       />
       <small id="emailHelp" className="form-text text-muted">
-        We'll never share your email with anyone else.
+      " We'll never share your email with anyone else."
       </small>
     </div>
     <div className="form-group">

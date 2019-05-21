@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import wallpaper from '../assets/wallpaper.png'
+import tennis from '../assets/tennis.jpeg'
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 
@@ -10,19 +10,14 @@ function Welcome(props){
 
   return(
     <div className="Welcome">
-      <style jsx>{`
-    .search.top {
-      display: flex;
-      position: absolute;
-    }
-    `}</style>
-      <img src={wallpaper}/>
-      <div className='search top'>
-        <SearchIcon />
-        <InputBase
-          placeholder="Search…"
-          />
+      <div className="leftOfImg">
+      
       </div>
+      <img src={tennis}/>
+      <div className="rightOfImg">
+
+      </div>
+
     </div>
   )
 }
