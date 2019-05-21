@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components'
+import wallpaper from '../assets/wallpaper.png'
 
 function Welcome(){
   return(
     <div className="Welcome">
-      <h1>Year of fun</h1>
-      <p>Relive the moments or make new ones</p>
-      <button>log in</button>
-      <p>OR</p>
-      <button>skip to main page</button>
+      <img src={wallpaper}/>
     </div>
   )
 }

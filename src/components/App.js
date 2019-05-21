@@ -12,7 +12,13 @@ export default class App extends Component {
   render() {
     return (
     <BrowserRouter>
-        <div className="App">
+        <div>
+          <style global jsx>{`
+           body {
+             margin: 0;
+             padding: 0;
+           }
+           `}</style>
           <Navbar />
           <Switch>
             <Route exact path="/" component={Welcome} />

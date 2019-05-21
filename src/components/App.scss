@@ -1,12 +1,17 @@
 /* eslint-disable-next-line */
+
 .App {
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .Welcome {
   width: 100%;
-  margin-top: 20px;
-  height: 80vh;
+  img{
+    width: 100%;
+    height: auto;
+  }
 }
 
 .link {
