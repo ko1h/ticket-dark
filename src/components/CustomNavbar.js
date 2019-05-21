@@ -1,126 +1,73 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Avatar from './Avatar';
-import Dropdown from './Dropdown';
+import { MDBContainer, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBIcon } from 'mdbreact';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
+class FixedNavbarExample extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          collapse: false,
+      };
+      this.onClick = this.onClick.bind(this);
+  }
 
-const styles = {
-  appbar: {
-    backgroundColor: '#D4A8A8',
-    height: '15vh'
-  },
-  grow: {
-    flexGrow: 1,
-    textAlign: 'center'
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-};
-
-class MenuAppBar extends React.Component {
-  state = {
-    auth: true,
-    anchorEl: null,
-  };
-
-  handleChange = event => {
-    this.setState({ auth: event.target.checked });
-  };
-
-  handleMenu = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
-
-  handleClose = () => {
-    this.setState({ anchorEl: null });
-  };
-
-  handleShow = event => {
-    this.setState({ anchorAl: event.currentTarget });
-  };
-
-  handleEnd = () => {
-    this.setState({ anchorAl: null });
-  };
-
+  onClick() {
+    this.setState({
+        collapse: !this.state.collapse,
+      });
+  }
 
   render() {
-    const { classes } = this.props;
-    const { auth, anchorEl } = this.state;
-    const open = Boolean(anchorEl);
-
-    return (
-      <div className="Nav">
-        <AppBar position="static" className={classes.appbar}>
-          <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-              <MenuIcon  onClick={this.handleMenu}>
-
-                <Dropdown />
-              </MenuIcon>
-            </IconButton>
-            <Typography variant="h6" color="inherit" className={classes.grow}>
-              Ticket Dark
-            </Typography>
-            {(
-              <div>
-                <IconButton
-                  aria-owns={open ? 'menu-appbar' : undefined}
-                  aria-haspopup="true"
-                  onClick={this.handleMenu}
-                  color="inherit"
-                >
-                  <Avatar />
-                </IconButton>
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  open={open}
-                  onClose={this.handleClose}
-                >
-                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                    <FormGroup>
-                      <FormControlLabel
-                        control={
-                          <Switch checked={auth} onChange={this.handleChange} aria-label="LoginSwitch" />
-                        }
-                        label={auth ? 'Logout' : 'Login'}
-                      />
-                    </FormGroup>
-                </Menu>
-              </div>
-            )}
-          </Toolbar>
-        </AppBar>
+    const bgPink = {backgroundColor: '#e91e63'}
+    const container = {height: 1300}
+    return(
+      <div>
+        <Router>
+          <header>
+            <MDBNavbar style={bgPink} dark expand="md" scrolling fixed="top">
+              <MDBNavbarBrand href="/">
+                  <strong>Navbar</strong>
+              </MDBNavbarBrand>
+              <MDBNavbarToggler onClick={ this.onClick } />
+              <MDBCollapse isOpen = { this.state.collapse } navbar>
+                <MDBNavbarNav left>
+                  <MDBNavItem active>
+                      <MDBNavLink to="#">Home</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                      <MDBNavLink to="#">Features</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                      <MDBNavLink to="#">Pricing</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink to="#">Options</MDBNavLink>
+                  </MDBNavItem>
+                </MDBNavbarNav>
+                <MDBNavbarNav right>
+                  <MDBNavItem>
+                    <MDBNavLink to="#"><MDBIcon fab icon="facebook-f" /></MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink to="#"><MDBIcon fab icon="twitter" /></MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink to="#"><MDBIcon fab icon="instagram" /></MDBNavLink>
+                  </MDBNavItem>
+                </MDBNavbarNav>
+              </MDBCollapse>
+            </MDBNavbar>
+          </header>
+        </Router>
+        <MDBContainer style={container} className="text-center mt-5 pt-5">
+          <h2>This Navbar is fixed</h2>
+          <h5>It will always stay visible on the top, even when you scroll down</h5>
+          <br/>
+          <p>Full page intro with background image will be always displayed in full screen mode, regardless of device</p>
+        </MDBContainer>
       </div>
     );
   }
 }
 
-MenuAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(MenuAppBar);
+export default FixedNavbarExample;

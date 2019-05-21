@@ -20,6 +20,7 @@ export default class App extends Component {
            }
            `}</style>
           <Navbar />
+
           <Switch>
             <Route exact path="/" component={Welcome} />
             <Route path="/Music" component={Music} />
