@@ -1,33 +1,19 @@
-import React, { Component } from 'react';
-import './App.scss';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from 'react'
+import { MDBContainer } from 'mdbreact';
 
-import Navbar from './CustomNavbar';
-import Error404 from './Error404';
-import Welcome from './Welcome';
-import Music from './Music';
+import FixedNavbarExample from './NavbarPage'
 
 
-export default class App extends Component {
-  render() {
+
+const App = () => {
+
     return (
-    <BrowserRouter>
         <div>
-          <style global jsx>{`
-           body {
-             margin: 0;
-             padding: 0;
-           }
-           `}</style>
-          <Navbar />
-
-          <Switch>
-            <Route exact path="/" component={Welcome} />
-            <Route path="/Music" component={Music} />
-            <Route component={Error404}/>
-          </Switch>
-          </div>
-      </BrowserRouter>
-    );
-  }
+            <FixedNavbarExample/>
+            <MDBContainer style={{height: 100}} className="text-center mt-5 pt-5">
+            </MDBContainer>
+        </div>
+    )
 }
+
+export default App
