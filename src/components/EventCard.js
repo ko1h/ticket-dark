@@ -2,20 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import concert from '../assets/concert.jpeg'
+import art from '../assets/art.jpeg'
+import sports from '../assets/sports.jpeg'
+import location from '../assets/location.jpeg'
+
 function EventCard(props){
   return(
     <div className="EventCard">
       <div className="concert">
-        Concert
+        <img src={concert}/>
       </div>
       <div className="art">
-       Art & Theather
+      <img src={art}/>
       </div>
       <div className="sports">
-        sports
+        <img src={sports}/>
       </div>
       <div className="location">
-      location
+      <img src={location}/>
       </div>
     </div>
   )

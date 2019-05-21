@@ -10,7 +10,6 @@ import EventCard from './EventCard';
 function Music(props){
   return(
     <div className="Music">
-        <CarouselPage />
         <EventCard />
     </div>
   )
