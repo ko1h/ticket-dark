@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 
 import './SideDrawer.css';
 
@@ -12,7 +13,7 @@ const sideDrawer = props => {
     <nav className={drawerClasses}>
       <ul>
         <li>
-          <Link to="/"><a>HOME</a></Link>
+          <Link to="/" ><a>HOME</a></Link>
         </li>
         <li>
           <Link to="/Music"><a>MUSIC</a></Link>

@@ -6,7 +6,7 @@ import Toolbar from './Toolbar/Toolbar';
 import SideDrawer from './SideDrawer/SideDrawer';
 import Backdrop from './Backdrop/Backdrop';
 
-import Navbar from './CustomNavbar';
+
 import Error404 from './Error404';
 import Welcome from './Welcome';
 import Music from './Music';
@@ -23,16 +23,9 @@ export default class App extends Component {
     });
   };
 
-  backdropClickHandler = () => {
-    this.setState({sideDrawerOpen: false});
-  };
 
   render() {
-    let backdrop;
 
-    if (this.state.sideDrawerOpen) {
-      backdrop = <Backdrop click={this.backdropClickHandler} />
-    }
     return (
     <BrowserRouter>
         <div>
@@ -44,6 +37,7 @@ export default class App extends Component {
            `}</style>
            <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
            <SideDrawer show={this.state.sideDrawerOpen} />
+
 
           <Switch>
             <Route exact path="/" component={Welcome} />
