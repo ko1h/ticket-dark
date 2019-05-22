@@ -13,7 +13,7 @@ import Error404 from './Error404';
 import Welcome from './Welcome';
 import Music from './Music';
 import Login from './Login';
-
+import artist from '../assets/chainsmokers.jpg'
 
 export default class App extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ export default class App extends Component {
     this.state = {
       masterMusicList: {
         'music1' : {
-          image: 'chainsmokers.jpeg',
+          category: 'CONCERT',
           name: 'THE CHAINSMOKERS',
           location: 'Moda Center - Portland, OR',
           date: 'Dec. 5'

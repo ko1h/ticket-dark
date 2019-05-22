@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import MusicList from './Music';
 import { Link } from 'react-router-dom';
 
-import artist from '../assets/chainsmokers.jpeg'
+import artist from '../assets/chainsmokers.jpg'
 
 
 function Music(props) {
@@ -13,14 +13,21 @@ function Music(props) {
   }
 
   return(
-    <div>
-      <div>
-        <img src={artist} />
-        <h1>{props.name}</h1>
-        <h3>{props.location}</h3>
-        <p>{props.date}</p>
+    <div className="main-bg">
+      <div className="Music">
+        <div className="picture">
+          <img src={artist} />
+        </div>
+        <div className="category">
+        <h1>{props.category}</h1>
+        </div>
+        <div className="info">
+          <h1>{props.name}</h1>
+          <h3>{props.location}</h3>
+          <p>{props.date}</p>
+          <button onClick={handleDeleteMusicClick}>X</button>
+        </div>
       </div>
-      <button onClick={handleDeleteMusicClick}>DELETE</button>
     </div>
 
   );
