@@ -17,10 +17,9 @@ function Welcome(props){
       <div className="rightOfImg">
 
       </div>
-      <div class="container">
-        <input type="text" placeholder="Search..."></input>
-        <div class="search"></div>
-      </div>
+      <form id="demo-2">
+	       <input type="search" placeholder="Search">< /input>
+       </form>
 
     </div>
   )
