@@ -4,9 +4,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Toolbar from './Toolbar/Toolbar';
 import SideDrawer from './SideDrawer/SideDrawer';
-import Backdrop from './Backdrop/Backdrop';
 
 
+import Media from './Media.js'
 import Error404 from './Error404';
 import Welcome from './Welcome';
 import Music from './Music';
@@ -41,7 +41,8 @@ export default class App extends Component {
 
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route path="/Music" component={Music} />
+            <Route path="/Event" component={Music} />
+            <Route path="/Event" component={Music} />
             <Route component={Error404}/>
           </Switch>
           </div>

@@ -14,6 +14,7 @@ import Avatar from '@material-ui/core/Avatar';
 const styles = theme => ({
   card: {
     display: 'flex',
+    backgroundColor: 'red'
   },
   details: {
     display: 'flex',

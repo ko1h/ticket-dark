@@ -4,19 +4,34 @@ import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 
 import './SideDrawer.css';
 
+
 const sideDrawer = props => {
   let drawerClasses = 'side-drawer';
   if (props.show) {
     drawerClasses = 'side-drawer open';
   }
+
   return (
     <nav className={drawerClasses}>
       <ul>
+      <DrawerToggleButton />
         <li>
-          <Link to="/" ><a>HOME</a></Link>
+          <span><Link to="/"><a>HOME</a></Link></span>
         </li>
         <li>
-          <Link to="/Music"><a>MUSIC</a></Link>
+          <Link to="/Event"><a>EVENT</a></Link>
+        </li>
+        <li>
+          <Link to="/"><a>CONCERT</a></Link>
+        </li>
+        <li>
+          <Link to="/Media"><a>SPORT</a></Link>
+        </li>
+        <li>
+          <Link to="/"><a>ART & THEATER</a></Link>
+        </li>
+        <li>
+          <Link to="/"><a>LOCATION</a></Link>
         </li>
       </ul>
     </nav>
