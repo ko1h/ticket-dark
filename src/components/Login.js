@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = () => (
+const Login = () => (
   <form>
     <div className="form-group">
       <label htmlFor="exampleInputEmail1">Email address</label>
@@ -34,4 +34,4 @@ const Form = () => (
   </form>
 )
 
-export default Form
+export default Login

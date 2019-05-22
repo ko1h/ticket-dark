@@ -15,7 +15,7 @@ class Navbar extends React.Component {
           </div>
 
           <div className="topNavRight">
-            <a href="#">SIGN IN</a>
+            <Link to="/login"><a>LOGIN</a></Link>
           </div>
         </div>
         <div className="logo">

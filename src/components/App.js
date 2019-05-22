@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { v4 } from 'uuid';
 
 import Toolbar from './Toolbar/Toolbar';
 import SideDrawer from './SideDrawer/SideDrawer';
 
+import NewMusicForm from './NewMusicForm';
+import MusicList from './MusicList';
 import Navbar from './Navbar';
 import Media from './Media.js'
 import Error404 from './Error404';
 import Welcome from './Welcome';
 import Music from './Music';
+import Login from './Login';
 
 
 export default class App extends Component {
@@ -18,7 +22,6 @@ export default class App extends Component {
     this.state = {
       masterMusicList: {
         'music1' : {
-          image: 'toji.jpeg',
           name: 'THE CHAINSMOKERS',
           location: 'Moda Center - Portland, OR',
           date: 'Dec. 5'
@@ -61,12 +64,12 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/" component={Welcome} />
             <Route path="/Music" component={Music} />
+            <Route path="/Login" component={Login} />
 
             <Route exact path='/musiclist' render={() =><MusicList musicList={this.state.masterMusicList} onDeleteMusic={this.handleRemoveItem} />} />
 
             <Route exact path='/newMusic' render={()=><NewMusicForm onNewMusicCreation={this.handleAddingItem} />} />
 
-            <Route path="/Music" component={Music} />
             <Route component={Error404}/>
           </Switch>
           </div>

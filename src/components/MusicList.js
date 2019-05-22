@@ -22,8 +22,8 @@ function MusicList(props) {
         var music = props.musicList[musicId]
         return <Music name={music.name}
           name={music.name}
-          brand={music.brand}
-          details={music.details}
+          location={music.location}
+          date={music.date}
           onDeleteMusic={props.onDeleteMusic}
           musicId={musicId}
           key={musicId} />;
