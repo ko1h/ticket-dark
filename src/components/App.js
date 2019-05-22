@@ -13,16 +13,37 @@ import Music from './Music';
 
 
 export default class App extends Component {
-  state = {
-    sideDrawerOpen: false
-  };
+  constructor(props) {
+    super(props)
+    this.state = {
+      masterMusicList: {
+        'music1' : {
+          image: 'toji.jpeg',
+          name: 'THE CHAINSMOKERS',
+          location: 'Moda Center - Portland, OR',
+          date: 'Dec. 5'
+        }
+      }
+    }
 
-  drawerToggleClickHandler = () => {
-    this.setState((prevState) => {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    this.handleAddingItem = this.handleAddingItem.bind(this);
+    this.handleRemoveItem = this.handleRemoveItem.bind(this);
+
+  }
+
+  handleAddingItem(newMusic) {
+    let newMusicId = v4();
+    let newMasterMusicList = Object.assign({}, this.state.masterMusicList, {
+      [newMusicId]: newMusic
     });
-  };
+    this.setState({masterMusicList: newMasterMusicList});
+  }
 
+  handleRemoveItem (eventId) {
+    let newMasterMusicList = Object.assign({}, this.state.masterMusicList);
+    delete newMasterMusicList[eventId];
+    this.setState({masterMusicList: newMasterMusicList});
+  }
 
   render() {
 
@@ -39,8 +60,13 @@ export default class App extends Component {
            <Navbar />
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route path="/Event" component={Music} />
-            <Route path="/Event" component={Music} />
+            <Route path="/Music" component={Music} />
+
+            <Route exact path='/musiclist' render={() =><MusicList musicList={this.state.masterMusicList} onDeleteMusic={this.handleRemoveItem} />} />
+
+            <Route exact path='/newMusic' render={()=><NewMusicForm onNewMusicCreation={this.handleAddingItem} />} />
+
+            <Route path="/Music" component={Music} />
             <Route component={Error404}/>
           </Switch>
           </div>

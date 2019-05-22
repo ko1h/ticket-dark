@@ -13,11 +13,7 @@ class Navbar extends React.Component {
           <div className="topNavLeft">
             <a href="#">FOLLOW @ TICKET DARK</a>
           </div>
-          <div className="topNavCenter">
-            <a href="#">UNCRATE.COM</a>
-            <a href="#">UNCRATE.SUPPLY</a>
-            <a href="#">UNCRATE.TV</a>
-          </div>
+
           <div className="topNavRight">
             <a href="#">SIGN IN</a>
           </div>
@@ -33,12 +29,12 @@ class Navbar extends React.Component {
         </div>
         <div class="bodyTopNav">
           <Link to="/"><a>CONCERTS</a></Link>
-          <Link to="/"><a>SPORTS</a></Link>
+          <Link to="/Event"><a>SPORTS</a></Link>
           <Link to="/"><a>ART AND THEATHER</a></Link>
           <Link to="/"><a>FAMILY</a></Link>
           <Link to="/"><a>LOCATION</a></Link>
        </div >
-  
+
       </div>
     </div>
     );
