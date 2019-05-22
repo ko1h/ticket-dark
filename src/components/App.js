@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Toolbar from './Toolbar/Toolbar';
 import SideDrawer from './SideDrawer/SideDrawer';
 
-
+import Navbar from './Navbar';
 import Media from './Media.js'
 import Error404 from './Error404';
 import Welcome from './Welcome';
@@ -35,10 +35,8 @@ export default class App extends Component {
              padding: 0;
            }
            `}</style>
-           <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-           <SideDrawer show={this.state.sideDrawerOpen} />
 
-
+           <Navbar />
           <Switch>
             <Route exact path="/" component={Welcome} />
             <Route path="/Event" component={Music} />

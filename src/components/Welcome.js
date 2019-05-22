@@ -11,11 +11,15 @@ function Welcome(props){
   return(
     <div className="Welcome">
       <div className="leftOfImg">
-      
+
       </div>
       <img src={tennis}/>
       <div className="rightOfImg">
 
+      </div>
+      <div class="container">
+        <input type="text" placeholder="Search..."></input>
+        <div class="search"></div>
       </div>
 
     </div>
