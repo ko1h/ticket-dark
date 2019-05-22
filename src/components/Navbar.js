@@ -1,56 +1,48 @@
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
+import styled from 'styled-components'
+import uncrate from '../assets/uncrate.png'
 import { Link } from 'react-router-dom';
 
-class FullPageIntroWithFixedTransparentNavbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapse: false,
-      isWideEnough: false,
-    };
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick() {
-    this.setState({
-      collapse: !this.state.collapse,
-    });
-  }
+class Navbar extends React.Component {
 
   render() {
     return (
       <div>
-        <header>
-            <MDBNavbar color="bg-primary" fixed="top" dark expand="md" scrolling transparent>
-              <MDBNavbarBrand >
-                <strong><Link to="/"><a>HOME</a></Link></strong>
-              </MDBNavbarBrand>
-              {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
-              <MDBCollapse isOpen={this.state.collapse} navbar>
-                <MDBNavbarNav left>
-                  <MDBNavItem>
-                    <Link to="/Event"><a>EVENT</a></Link>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <Link to="/"><a>CONCERT</a></Link>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <Link to="/Media"><a>SPORT</a></Link>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <Link to="/"><a>ART & THEATER</a></Link>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <Link to="/"><a>LOCATION</a></Link>
-                  </MDBNavItem>
-                </MDBNavbarNav>
-              </MDBCollapse>
-            </MDBNavbar>
-        </header>
+      <div className="topNavColumn">
+        <div className="topNav">
+          <div className="topNavLeft">
+            <a href="#">FOLLOW @ TICKET DARK</a>
+          </div>
+          <div className="topNavCenter">
+            <a href="#">UNCRATE.COM</a>
+            <a href="#">UNCRATE.SUPPLY</a>
+            <a href="#">UNCRATE.TV</a>
+          </div>
+          <div className="topNavRight">
+            <a href="#">SIGN IN</a>
+          </div>
+        </div>
+        <div className="logo">
+          <img src={uncrate}/>
+        </div>
       </div>
+
+      <div className="bodyNavColumn">
+        <div className="line">
+
+        </div>
+        <div class="bodyTopNav">
+          <Link to="/"><a>CONCERTS</a></Link>
+          <Link to="/"><a>SPORTS</a></Link>
+          <Link to="/"><a>ART AND THEATHER</a></Link>
+          <Link to="/"><a>FAMILY</a></Link>
+          <Link to="/"><a>LOCATION</a></Link>
+       </div >
+  
+      </div>
+    </div>
     );
   }
 }
 
-export default FullPageIntroWithFixedTransparentNavbar;
+export default Navbar;

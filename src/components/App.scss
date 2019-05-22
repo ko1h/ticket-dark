@@ -6,9 +6,75 @@
   padding: 0;
 }
 
+//Nav style
+
+.topNavColumn {
+  width: 100%;
+  height: 20vh;
+  background-color: #D4A8A8;
+  display: flex;
+  flex-direction: column;
+  .topNav {
+    height: 30px;
+    background-color: #D4A8A8;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px white solid;
+    .topNavCenter a{
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+    a {
+      color: white;
+      font-size: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+  .logo img{
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: -1.6px;
+  }
+}//end of top nav
+
+.bodyNavColumn {
+  width: 100%;
+  background-color: #D4A8A8;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  .bodyTopNav {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    justify-content:center;
+    margin-top: 1%;
+    }
+  .line{
+    width: 80%;
+    display: flex;
+    justify-content:center;
+    margin: auto;
+    border-bottom: 1px solid white;
+  }
+  a{
+    color: gold;
+    text-decoration: none;
+    margin-right: 8px;
+  }
+}//body NavColumn
+
 .Welcome {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: repeat(4, 1fr);
@@ -74,10 +140,12 @@
   }
 }
 
-
-
-
-
+#demo-2 {
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  color: white;
+}
 input {
 	outline: none;
 }
@@ -94,8 +162,8 @@ input::-webkit-search-cancel-button {
 
 
 input[type=search] {
-	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-	border: solid 1px #ccc;
+	background: transparent url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px white;
 	padding: 9px 10px 9px 32px;
 	width: 55px;
 
@@ -109,8 +177,8 @@ input[type=search] {
 }
 input[type=search]:focus {
 	width: 130px;
-	background-color: #fff;
-	border-color: #66CC75;
+	background-color: transparent;
+	border-color: white;
 
 	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
 	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
@@ -119,10 +187,10 @@ input[type=search]:focus {
 
 
 input:-moz-placeholder {
-	color: #999;
+	color: white;
 }
 input::-webkit-input-placeholder {
-	color: #999;
+	color: white;
 }
 
 /* Demo 2 */
@@ -133,13 +201,13 @@ input::-webkit-input-placeholder {
 	cursor: pointer;
 }
 #demo-2 input[type=search]:hover {
-	background-color: #fff;
+	background-color: transparent;
 }
 #demo-2 input[type=search]:focus {
 	width: 130px;
 	padding-left: 32px;
-	color: #000;
-	background-color: #fff;
+	color: white;
+	background-color: transparent;
 	cursor: auto;
 }
 #demo-2 input:-moz-placeholder {

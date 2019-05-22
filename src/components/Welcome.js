@@ -4,8 +4,6 @@ import tennis from '../assets/tennis.jpeg'
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 
-
-
 function Welcome(props){
 
   return(
