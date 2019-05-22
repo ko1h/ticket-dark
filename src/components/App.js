@@ -8,7 +8,6 @@ import SideDrawer from './SideDrawer/SideDrawer';
 import NewMusicForm from './NewMusicForm';
 import MusicList from './MusicList';
 import Navbar from './Navbar';
-import Media from './Media.js'
 import Error404 from './Error404';
 import Welcome from './Welcome';
 import Music from './Music';

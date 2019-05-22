@@ -24,7 +24,7 @@ function Music(props) {
         <div className="info">
           <h1>{props.name}</h1>
           <h3>{props.location}</h3>
-          <p>{props.date}</p>
+          <h5>{props.date}</h5>
           <button onClick={handleDeleteMusicClick}>X</button>
         </div>
       </div>
