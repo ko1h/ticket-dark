@@ -28,7 +28,7 @@ class Navbar extends React.Component {
 
         </div>
         <div class="bodyTopNav">
-          <Link to="/"><a>CONCERTS</a></Link>
+          <Link to="/musiclist"><a>CONCERTS</a></Link>
           <Link to="/Event"><a>SPORTS</a></Link>
           <Link to="/"><a>ART AND THEATHER</a></Link>
           <Link to="/"><a>FAMILY</a></Link>

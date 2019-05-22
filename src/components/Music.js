@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import MusicList from './Music';
 import { Link } from 'react-router-dom';
 
+import artist from '../assets/chainsmokers.jpeg'
+
 
 function Music(props) {
 
@@ -10,20 +12,10 @@ function Music(props) {
       props.onDeleteMusic(props.musicId);
   }
 
-  const mainStyle = {
-    display: 'grid',
-    width: '75%',
-    margin: '20px 0',
-    gridTemplateColumns: '50% auto',
-    gridTemplateRows: '1fr 1fr 250px',
-    gridGap: '5px 20px',
-    color: '#C1D4D9',
-    border: '1px solid red',
-    paddingRight: '10px',
-  }
   return(
     <div>
       <div>
+        <img src={artist} />
         <h1>{props.name}</h1>
         <h3>{props.location}</h3>
         <p>{props.date}</p>

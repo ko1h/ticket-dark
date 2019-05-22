@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { v4 } from 'uuid';
-
 import Toolbar from './Toolbar/Toolbar';
 import SideDrawer from './SideDrawer/SideDrawer';
 
@@ -22,6 +21,7 @@ export default class App extends Component {
     this.state = {
       masterMusicList: {
         'music1' : {
+          image: 'chainsmokers.jpeg',
           name: 'THE CHAINSMOKERS',
           location: 'Moda Center - Portland, OR',
           date: 'Dec. 5'
@@ -31,7 +31,6 @@ export default class App extends Component {
 
     this.handleAddingItem = this.handleAddingItem.bind(this);
     this.handleRemoveItem = this.handleRemoveItem.bind(this);
-
   }
 
   handleAddingItem(newMusic) {
@@ -63,7 +62,6 @@ export default class App extends Component {
            <Navbar />
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route path="/Music" component={Music} />
             <Route path="/Login" component={Login} />
 
             <Route exact path='/musiclist' render={() =><MusicList musicList={this.state.masterMusicList} onDeleteMusic={this.handleRemoveItem} />} />
