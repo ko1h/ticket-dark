@@ -26,7 +26,7 @@ const FormPage = () => {
           />
         </div>
         <div className="text-center">
-          <MDBBtn><Link to="/Event"><a>SPORTS</a></Link></MDBBtn>
+          <MDBBtn><Link to="/Event"><a>Login</a></Link></MDBBtn>
         </div>
       </form>
     </div>

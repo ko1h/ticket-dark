@@ -30,15 +30,17 @@
       font-weight: bold;
       text-decoration: none;
     }
+    a:hover {
+      color: gold;
+    }
   }
-  .logo img{
+  .logo {
     margin: 0 auto;
     width: auto;
     height: 100px;
     display: flex;
     justify-content: center;
-    margin-top: 2%;
-    margin-bottom: -1.6px;
+    color: white;
   }
 }//end of top nav
 
@@ -67,6 +69,9 @@
     color: white;
     text-decoration: none;
     margin-right: 5px;
+  }
+  a:hover {
+    color: gold;
   }
 }//body NavColumn
 
@@ -160,7 +165,7 @@ input::-webkit-search-cancel-button {
 
 
 input[type=search] {
-	background: transparent url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	background: transparent;
 	border: solid 1px white;
 	padding: 9px 10px 9px 32px;
 	width: 55px;

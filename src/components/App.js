@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { v4 } from 'uuid';
-import Toolbar from './Toolbar/Toolbar';
-import SideDrawer from './SideDrawer/SideDrawer';
 
 import NewMusicForm from './NewMusicForm';
 import MusicList from './MusicList';
