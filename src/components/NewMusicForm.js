@@ -54,7 +54,8 @@ class NewMusicForm extends React.Component {
            }
            `}</style>
          <form onSubmit={this.handleNewMusicFormSubmission}>
-        <h1>Add new Music to the inventory</h1>
+        <h1>Add New Events</h1>
+
         <input
           type='text'
           id='name'
@@ -70,7 +71,7 @@ class NewMusicForm extends React.Component {
             id='date'
             placeholder='Date.'
             ref={(input) => {this.date = input}}/>
-        <button type='submit'>Add!</button>
+          <button type='submit'>Submit!</button>
       </form>
     </div>
   )

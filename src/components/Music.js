@@ -25,7 +25,7 @@ function Music(props) {
           <h1>{props.name}</h1>
           <h3>{props.location}</h3>
           <h5>{props.date}</h5>
-          <button onClick={handleDeleteMusicClick}>X</button>
+          <a className="remove-player" onClick={handleDeleteMusicClick}>Buy Tickets</a>
         </div>
       </div>
     </div>

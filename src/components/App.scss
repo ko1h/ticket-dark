@@ -237,6 +237,7 @@ input::-webkit-input-placeholder {
     width: auto;
     height: 500px;
   }
+
   .category {
     grid-column: 2 /3;
     grid-row: 1 / 1;
@@ -261,6 +262,11 @@ input::-webkit-input-placeholder {
     grid-column: 2 /4;
     grid-row: 2 / 4;
     color: white;
+    .remove-player {
+      margin-right: 10px;
+      color: gold;
+      cursor: pointer;
+    }
   }
 }
 
